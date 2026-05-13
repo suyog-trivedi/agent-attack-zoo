@@ -21,8 +21,10 @@ More to come — roughly one a week.
 
 ## Run any of them
 
+Pick one from the Index above and follow its own README. As an example, the current one:
+
 ```powershell
-cd <attack-folder>
+cd exfil-csv-agent
 # install deps as listed in that folder's README
 $env:OPENAI_API_KEY = "sk-..."
 python attack.py

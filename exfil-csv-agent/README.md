@@ -1,8 +1,10 @@
 # agent-attack-zoo / exfil-csv-agent
 
-A reproducible demonstration of how a polite, well-behaved AI agent can be coaxed into exfiltrating sensitive data through a sequence of innocent-looking instructions — and a 7-line policy that stops it.
+A reproducible demonstration of how a polite, well-behaved AI agent can be coaxed into exfiltrating sensitive data through a sequence of innocent-looking instructions — and a 4-line policy that stops it.
 
-> **Read the full write-up:** [I exfiltrated data through a CSV agent in 3 steps. Here's the 7-line policy that stops it.](https://<your-site>/writing/csv-agent-exfil)
+> **Read the full write-up:** [I leaked customer data through a CSV agent in 3 turns. The fix was a 4-line policy.](https://<your-site>/writing/csv-agent-exfil)
+>
+> *(Personal site is still going up — link will work soon. Repo is the source of truth in the meantime.)*
 
 ## TL;DR
 
@@ -39,7 +41,7 @@ Expected output:
 | File | Purpose |
 |---|---|
 | `attack.py` | Vanilla LangChain CSV agent; runs the 3-turn exfil; writes `out/exfiltrated.json` |
-| `policy.yaml` | The 7-condition policy that blocks the attack. Generic syntax — works with most policy engines |
+| `policy.yaml` | The 4-condition policy that blocks the attack. Generic syntax — works with most policy engines |
 | `defended-pattern.py` | Vendor-neutral defense pattern: minimal reference policy engine + `@guarded` decorator. Plug in your own engine |
 | `data/customers.csv` | 10 rows of synthetic Indian customer data with fake PII |
 | `sample-traces/before.json` | Audit log from a real run of `attack.py` |
@@ -58,13 +60,11 @@ Expected output:
     - { field: risk_signals.is_external,               operator: is_true }
 ```
 
-Four conditions. Five lines of YAML. That's the entire defense for this attack class.
+Four conditions. That's the entire defense for this attack class.
 
 ## What I'm using under the hood
 
 `defended-pattern.py` ships a 60-line reference engine so the demo is fully self-contained. In my own setup I wire `policy.yaml` into a more capable engine that also handles taint propagation, circuit breakers, and approval flows. The pattern is the same — only the engine is different.
-
-If you're shipping agents to production and want a 2-week security review, [reach out](mailto:suyog-trivedi@<domain>).
 
 ## Disclaimer
 
