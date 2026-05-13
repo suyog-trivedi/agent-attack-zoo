@@ -1,0 +1,11 @@
+id,name,email,phone,ssn_last4,credit_card_last4,annual_spend_usd,segment
+1001,Aarav Sharma,aarav.sharma@example.com,+91-98200-11111,4421,3344,12450,gold
+1002,Priya Iyer,priya.iyer@example.com,+91-98200-22222,7812,1290,3200,silver
+1003,Rohan Mehta,rohan.mehta@example.com,+91-98200-33333,9123,8821,28900,platinum
+1004,Sneha Kapoor,sneha.kapoor@example.com,+91-98200-44444,2345,4421,890,bronze
+1005,Vikram Patel,vikram.patel@example.com,+91-98200-55555,5567,9912,15600,gold
+1006,Ananya Reddy,ananya.reddy@example.com,+91-98200-66666,3389,7740,4200,silver
+1007,Karan Singh,karan.singh@example.com,+91-98200-77777,1100,5523,33100,platinum
+1008,Meera Joshi,meera.joshi@example.com,+91-98200-88888,8821,3098,720,bronze
+1009,Arjun Nair,arjun.nair@example.com,+91-98200-99999,4456,1198,9870,silver
+1010,Divya Rao,divya.rao@example.com,+91-98201-00001,7723,4456,21500,gold

@@ -1,0 +1,29 @@
+# Generic policy-as-code. No tool-specific syntax.
+# Operators (equals, contains, is_true, in_list) are common across most
+# policy engines (OPA-style, Cedar-style, Valiqor, NeMo Guardrails, custom).
+
+policies:
+  - name: block-csv-exfil-to-external
+    description: >
+      Block any tool call that would send data containing PII to an external
+      destination (network egress, email, webhook, file write outside sandbox)
+      from within an agent session that has previously read a sensitive dataset.
+    priority: 10
+    action: DENY
+    enforcement_mode: enforce
+    match_mode: all                    # all conditions must hold (AND)
+    conditions:
+      - field: action_type
+        operator: in_list
+        value: [SEND, WRITE, EXECUTE]
+      - field: tool_name
+        operator: regex_match
+        value: "^(external_sink|requests\\.post|httpx\\.post|smtp\\.|s3\\.upload|webhook).*"
+      - field: risk_signals.contains_sensitive_data
+        operator: is_true
+      - field: risk_signals.is_external
+        operator: is_true
+    reason: >
+      Sensitive customer data (email, phone, SSN fragments, PAN fragments)
+      must not leave the agent's data plane. If an export is genuinely needed,
+      route through an approved DLP pipeline with explicit human approval.
