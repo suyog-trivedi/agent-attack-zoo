@@ -2,9 +2,7 @@
 
 A reproducible demonstration of how a polite, well-behaved AI agent can be coaxed into exfiltrating sensitive data through a sequence of innocent-looking instructions — and a 4-line policy that stops it.
 
-> **Read the full write-up:** [I leaked customer data through a CSV agent in 3 turns. The fix was a 4-line policy.](https://<your-site>/writing/csv-agent-exfil)
->
-> *(Personal site is still going up — link will work soon. Repo is the source of truth in the meantime.)*
+> **Read the full write-up:** [I leaked customer data through a CSV agent in 3 turns. The fix was a 4-line policy.](https://suyogtrivedi.com/writing/csv-agent-exfil)
 
 ## TL;DR
 
