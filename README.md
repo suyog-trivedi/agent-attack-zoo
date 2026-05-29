@@ -1,23 +1,19 @@
 # agent-attack-zoo
 
-A small, growing collection of real, runnable agent-misuse attacks — and the smallest defenses I could write that actually stop them.
+A small, growing collection of real, runnable artifacts on AI agent runtime security — attacks with the smallest defenses I could write that stop them, plus engine deep-dives with measured numbers.
 
-Each subdirectory is one attack. Each one ships:
+Each subdirectory is one piece. Attack folders ship a runnable `attack.py`, a vendor-neutral `policy.yaml`, a `defended-pattern.py`, and sample before/after traces. Engine folders ship the reference code plus a runnable benchmark and the JSON it produced.
 
-- A runnable attack script (`attack.py`) that reproduces the failure end-to-end.
-- A policy file (`policy.yaml`) in a generic, vendor-neutral syntax.
-- A defended pattern (`defended-pattern.py`) — a tiny reference policy engine plus a thin wrapper around the agent that stops the attack.
-- Sample traces (`sample-traces/`) — sanitized JSON of what the attack looks like before and after the defense.
-
-The point isn't to ship a guardrail product. It's to make these failure modes concrete, so anyone building agents can grep their own stack for the same shape and decide what to do.
+The point isn't to ship a guardrail product. It's to make these patterns concrete, so anyone building agents can grep their own stack for the same shape and decide what to do.
 
 ## Index
 
-| # | Attack | Where |
+| # | Topic | Where |
 |---|---|---|
 | 01 | CSV agent → multi-turn PII exfiltration to an external sink | [`exfil-csv-agent/`](exfil-csv-agent) |
+| 02 | 3-tier action classifier (keyword → registry → LLM) + latency benchmark | [`action-classifier-3tier/`](action-classifier-3tier) |
 
-More to come — roughly one a week.
+More to come — roughly one a week. Topics rotate between runnable attacks, engine deep-dives, and OSS-agent audits.
 
 ## Run any of them
 

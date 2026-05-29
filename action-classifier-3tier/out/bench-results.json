@@ -1,0 +1,51 @@
+{
+  "config": {
+    "N": 10000,
+    "tier3_real_cap": 100
+  },
+  "coverage": {
+    "tier1_hit": 7825,
+    "tier2_hit": 1469,
+    "tier3_escape": 706,
+    "tier1_pct": 78.25,
+    "tier2_pct": 14.69,
+    "tier3_pct": 7.06
+  },
+  "tier1_latency_us": {
+    "n": 7825,
+    "min_us": 0.4,
+    "p50_us": 1.9,
+    "p95_us": 4.8,
+    "p99_us": 6.6,
+    "max_us": 204.7,
+    "mean_us": 2.26
+  },
+  "tier2_latency_us": {
+    "n": 1469,
+    "min_us": 0.3,
+    "p50_us": 0.7,
+    "p95_us": 0.9,
+    "p99_us": 1.1,
+    "max_us": 22.0,
+    "mean_us": 0.71
+  },
+  "tier3_latency_us": {
+    "n": 100,
+    "min_us": 795817.2,
+    "p50_us": 1071864.75,
+    "p95_us": 1929192.53,
+    "p99_us": 15935095.38,
+    "max_us": 27203026.3,
+    "mean_us": 1603840.45,
+    "skipped": false
+  },
+  "end_to_end_weighted_us": {
+    "n": 10000,
+    "min_us": 0.3,
+    "p50_us": 1.8,
+    "p95_us": 1071864.75,
+    "p99_us": 1071864.75,
+    "max_us": 1071864.75,
+    "mean_us": 75675.52
+  }
+}
